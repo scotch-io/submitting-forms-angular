@@ -42,6 +42,8 @@
 			            } else {
 			            	// if successful, bind success message to message
 			                $scope.message = data.message;
+                                        $scope.errorName = '';
+			                $scope.errorSuperhero = '';
 			            }
 			        });
 
@@ -50,6 +52,14 @@
 		}
 
 	</script>
+        <style>
+            .ng-valid.ng-dirty{
+                border-color: green;
+            }
+            .ng-invalid.ng-dirty{
+                border-color: red;
+            }
+        </style>
 </head>
 <!-- apply the module and controller to our body so angular is applied to that -->
 <body ng-app="formApp" ng-controller="formController">
@@ -70,7 +80,7 @@
 		<div id="name-group" class="form-group" ng-class="{ 'has-error' : errorName }">
 			<label>Name</label>
 			<input type="text" name="name" class="form-control" placeholder="Bruce Wayne" ng-model="formData.name">
-			<span class="help-block" ng-show="errorName">{{ errorName }}</span>
+                        <span class="help-block" ng-show="errorName">{{ errorName }}</span>
 		</div>
 
 		<!-- SUPERHERO NAME -->
