@@ -18,7 +18,7 @@
 		var formApp = angular.module('formApp', []);
 
 		// create angular controller and pass in $scope and $http
-		function formController($scope, $http) {
+		formApp.controller('formController', function ($scope, $http) {
 
 			// create a blank object to hold our form information
 			// $scope will allow this to pass between controller and view
@@ -49,7 +49,7 @@
 
 			};
 
-		}
+		});
 
 	</script>
         <style>
